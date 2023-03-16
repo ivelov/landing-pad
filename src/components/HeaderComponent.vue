@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import LogoSvg from "./LogoSvg.vue";
+import LogoSvg from "./svg/LogoSvg.vue";
 export default {
   name: "HeaderComponent",
   props: {
