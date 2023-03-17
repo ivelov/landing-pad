@@ -101,14 +101,14 @@
     >
     &nbsp;
       <h1
-        class="mt-14 sm:mt-[106px] text-[3.375rem] leading-[4.5rem] text-center relative"
+        class="mt-9 sm:mt-[87px] text-[3.375rem] leading-[4.5rem] text-center relative"
       >
         Our Story
         <FeatureSvg
           class="inline absolute -top-3 -translate-x-[3px]"
         ></FeatureSvg>
       </h1>
-      <p class="mt-10 mb-14 sm:mb-[102px] text-lg leading-[1.625rem] text-center mx-auto w-[66%]">
+      <p class="mt-10 mb-9 sm:mb-[89px] text-lg leading-[1.625rem] text-center mx-auto w-[66%]">
         We can help you reimagine your business through a digital lens. Our
         software engineering heritage combined with our strategic business and
         innovation consulting, design thinking, and physical-digital
@@ -125,10 +125,29 @@
       &nbsp;
     </section>
 
-    <section>
-      <h1>
+    <section class="bg-blue-200 rounded-2xl w-[92.5%] mx-auto mt-[100px] relative overflow-hidden">
+      <div
+        class="absolute bg-blue-400 blur-[170px] rounded-[190px] w-[190px] h-[190px] z-0 -left-[72px] -top-[47px]"
+      ></div>
+      <div class="relative z-10">
+        &nbsp;
+      <h1 class="relative text-[54px] leading-[4.5rem] w-min mx-auto mt-[71px]">
+        <FeatureLeftSvg class="inline absolute -top-10 -translate-x-[93%] text-blue-text"></FeatureLeftSvg>
         Team
       </h1>
+
+      <h2 class=" text-center text-[2rem] leading-[2.625rem] max-w-[385px] mx-auto">
+        A team of <span class="text-blue-text">professionals</span> is <span class="text-blue-text">working</span> on your problem
+      </h2>
+
+      <div class="mt-16 mx-auto mb-[53px] w-max grid grid-cols-1 lg:grid-cols-2 gap-x-[90px] gap-y-16">
+        <TeamMember v-for="(member, index) in team" :key="index" :data="member"></TeamMember>
+      </div>
+      &nbsp;
+      </div>
+      <div
+        class="absolute bg-blue-400 blur-[170px] rounded-[190px] w-[190px] h-[190px] z-0 -right-[133px] -bottom-[136px]"
+      ></div>
     </section>
     <footer class="mt-10"></footer>
   </div>
@@ -139,12 +158,16 @@ import HeaderComponent from "../components/HeaderComponent.vue";
 import ReviewComponent from "../components/ReviewComponent.vue";
 import ServiceCard from "../components/ServiceCard.vue";
 import ServiceQuestionCard from "../components/ServiceQuestionCard.vue";
+import TeamMember from "../components/TeamMember.vue";
+
+import ReviewsMixin from "../components/mixins/ReviewsMixin.vue";
+import ServicesMixin from "../components/mixins/ServicesMixin.vue";
+import TeamMixin from "../components/mixins/TeamMixin.vue";
 
 import RightArrow from "../components/svg/RightArrow.vue";
 import LeftArrow from "../components/svg/LeftArrow.vue";
-import ReviewsMixin from "../components/mixins/ReviewsMixin.vue";
-import ServicesMixin from "../components/mixins/ServicesMixin.vue";
 import FeatureSvg from "../components/svg/FeatureSvg.vue";
+import FeatureLeftSvg from "../components/svg/FeatureLeftSvg.vue";
 
 export default {
   name: "HomePage",
@@ -326,8 +349,10 @@ export default {
     FeatureSvg,
     ServiceCard,
     ServiceQuestionCard,
+    FeatureLeftSvg,
+    TeamMember,
   },
-  mixins: [ReviewsMixin, ServicesMixin],
+  mixins: [ReviewsMixin, ServicesMixin, TeamMixin],
 };
 </script>
 
