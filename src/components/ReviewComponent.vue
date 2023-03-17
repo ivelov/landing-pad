@@ -1,6 +1,6 @@
 <template>
   <article
-    class="rounded-lg w-[200px] sm:w-[335px] p-4 shadow-4x10 h-min max-h-40 overflow-y-auto"
+    class="rounded-lg bg-white w-[200px] sm:w-[335px] p-4 shadow-4x10 h-min max-h-40 overflow-y-auto"
   >
     <p class="flex items-center">
       <DotSvg class="text-blue-text mr-2"></DotSvg>
@@ -13,7 +13,7 @@
       <StarSvg class="text-blue" v-for="n in data.rate" :key="n"></StarSvg>
       <StarSvg class="text-gray" v-for="n in 5 - data.rate" :key="n"></StarSvg>
     </div>
-    <p class="ml-3 font-gilroy mr-9 leading-[17px]">
+    <p class="ml-3 text-[0.938rem] font-light mr-9 leading-[17px]">
       {{ data.message }}
     </p>
   </article>

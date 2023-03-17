@@ -4,21 +4,53 @@
 
 @font-face {
     font-family: 'Futura';
-    src: url('../public/fonts/futura\ medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-} 
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../public/fonts/futura\ bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-} 
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../public/fonts/futura\ light.ttf') format('truetype');
+    src: url('../public/fonts/FuturaBT-Light.eot');
+    src: url('../public/fonts/FuturaBT-Light.eot?#iefix') format('embedded-opentype'),
+        url('../public/fonts/FuturaBT-Light.woff2') format('woff2'),
+        url('../public/fonts/FuturaBT-Light.woff') format('woff'),
+        url('../public/fonts/FuturaBT-Light.ttf') format('truetype'),
+        url('../public/fonts/FuturaBT-Light.svg#FuturaBT-Light') format('svg');
     font-weight: 300;
     font-style: normal;
-} 
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../public/fonts/FuturaBT-Heavy.eot');
+    src: url('../public/fonts/FuturaBT-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('../public/fonts/FuturaBT-Heavy.woff2') format('woff2'),
+        url('../public/fonts/FuturaBT-Heavy.woff') format('woff'),
+        url('../public/fonts/FuturaBT-Heavy.ttf') format('truetype'),
+        url('../public/fonts/FuturaBT-Heavy.svg#FuturaBT-Heavy') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../public/fonts/FuturaBT-Medium.eot');
+    src: url('../public/fonts/FuturaBT-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../public/fonts/FuturaBT-Medium.woff2') format('woff2'),
+        url('../public/fonts/FuturaBT-Medium.woff') format('woff'),
+        url('../public/fonts/FuturaBT-Medium.ttf') format('truetype'),
+        url('../public/fonts/FuturaBT-Medium.svg#FuturaBT-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('../public/fonts/Futura-Bold.eot');
+    src: url('../public/fonts/Futura-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../public/fonts/Futura-Bold.woff2') format('woff2'),
+        url('../public/fonts/Futura-Bold.woff') format('woff'),
+        url('../public/fonts/Futura-Bold.ttf') format('truetype'),
+        url('../public/fonts/Futura-Bold.svg#Futura-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

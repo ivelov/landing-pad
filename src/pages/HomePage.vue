@@ -1,18 +1,18 @@
 <template>
   <div class="overflow-hidden">
     <section
-      class="text-white h-[900px] rounded-b-lg bg-cover bg-no-repeat bg-center bg-blend-multiply bg-gray-300 bg-[url('../public/img/home-header.jfif')]"
+      class="relative z-10 text-white h-[900px] rounded-b-lg bg-cover bg-no-repeat bg-center bg-blend-multiply bg-gray-300 bg-[url('../public/img/home-header.jfif')]"
     >
       <HeaderComponent current-page="home"></HeaderComponent>
-      <h2 class="text-[54px] font-bold max-w-lg ml-24 mt-[187px]">
+      <h2 class="text-[54px] font-bold leading-[4.5rem] max-w-lg ml-24 mt-[187px]">
         Moving to Portugal?
       </h2>
-      <p class="text-2xl ml-24 max-w-[434px] font-gilroy">
+      <p class="text-2xl ml-24 mt-[10px] max-w-[434px] font-gilroy">
         Let the experts of the ACK ecosystem handle your administrative
         headaches
       </p>
       <button
-        class="rounded bg-blue text-white ml-24 mt-10 py-3.5 px-10 font-medium text-lg hover:bg-blue-700 transition-colors"
+        class="rounded bg-blue text-white ml-24 mt-10 py-3.5 px-10 w-[270px] font-medium text-lg hover:bg-blue-700 transition-colors"
       >
         Help to emigrate
       </button>
@@ -20,8 +20,10 @@
 
     <!-- Reviews -->
     <section
-      class="mt-16 w-[85.4%] mx-auto flex justify-between items-center h-36"
+      class="mt-16 relative"
     >
+    <div class="absolute bg-gray-bg blur-[58px] rounded-[190px] w-[380px] h-[380px] z-0 -top-[134px] -left-[87px]"></div>
+    <div class="z-10 w-[85.4%] mx-auto flex justify-between items-center h-36 relative">
       <button @click="reviewLeft" class="mr-3">
         <LeftArrow class="text-blue"></LeftArrow>
       </button>
@@ -44,6 +46,31 @@
       <button @click="reviewRight" class="ml-3">
         <RightArrow class="text-blue"></RightArrow>
       </button>
+    </div>
+      
+    </section>
+
+    <!-- Services -->
+    <section class="mt-32 mb-12 relative">
+      <div class="absolute bg-gray-bg blur-[58px] rounded-[190px] w-[255px] h-[255px] z-0 -right-[65px] top-[42%]"></div>
+      <div class="relative z-10">
+        <h1 class="text-center font-medium text-[54px] leading-[4.5rem] relative">
+        <span class="text-dark">Our</span> 
+        <span class="text-blue-text">Services 
+          <FeatureSvg class="inline absolute -top-3 -translate-x-[3px]"></FeatureSvg>
+        </span>
+      </h1>
+      <h2 class="text-dark text-center font-medium text-[2rem] leading-[42px] mt-4">Tailor-made solutions for your unique situation</h2>
+      <p class="text-[15px] leading-[18px] mt-8 w-[92.5%] mx-auto">
+        On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will
+      </p>
+
+      <div class="grid w-max mx-auto gap-[31px] mt-4 justify-center grid-cols-1 min-[700px]:grid-cols-2 min-[1000px]:grid-cols-3 min-[1400px]:grid-cols-4 min-[1800px]:grid-cols-5">
+        <ServiceCard v-for="service in services" :key="service.service" :data="service"></ServiceCard>
+        <ServiceQuestionCard></ServiceQuestionCard>
+      </div>
+      </div>
+      
     </section>
 
     <footer class="mt-10"></footer>
@@ -53,82 +80,19 @@
 <script>
 import HeaderComponent from "../components/HeaderComponent.vue";
 import ReviewComponent from "../components/ReviewComponent.vue";
+import ServiceCard from "../components/ServiceCard.vue";
+import ServiceQuestionCard from "../components/ServiceQuestionCard.vue";
+
 import RightArrow from "../components/svg/RightArrow.vue";
 import LeftArrow from "../components/svg/LeftArrow.vue";
+import ReviewsMixin from '../components/mixins/ReviewsMixin.vue';
+import ServicesMixin from '../components/mixins/ServicesMixin.vue';
+import FeatureSvg from "../components/svg/FeatureSvg.vue";
 
 export default {
   name: "HomePage",
   data() {
     return {
-      reviews: [
-        {
-          absolute: false,
-          fade: false,
-          isRight: false,
-          isLeft: false,
-          hidden: false,
-          data: {
-            author: "Jeffry Jacobs 1",
-            rate: 5,
-            role: "Business analytics",
-            message: "Helped my dad move to other countries in 2 months",
-          },
-        },
-        {
-          absolute: true,
-          fade: true,
-          isRight: false,
-          isLeft: false,
-          hidden: true,
-          data: {
-            author: "Josiane Ebert",
-            rate: 5,
-            role: "Business analytics",
-            message:
-              "Helped with migration, prepared all the documents, professional team and good job! I will recommend to all acquaintances",
-          },
-        },
-        {
-          absolute: false,
-          fade: false,
-          isRight: false,
-          isLeft: false,
-          hidden: false,
-          data: {
-            author: "Kristian Murazik",
-            rate: 5,
-            role: "Business analytics",
-            message:
-              "Professional team, helped with all questions, thanks! professional team and good job",
-          },
-        },
-        {
-          absolute: true,
-          fade: true,
-          isRight: false,
-          isLeft: false,
-          hidden: true,
-          data: {
-            author: "Jeffry Jacobs 2",
-            rate: 5,
-            role: "Business analytics",
-            message: "Helped my dad move to other countries in 2 months",
-          },
-        },
-        {
-          absolute: true,
-          fade: true,
-          isRight: false,
-          isLeft: false,
-          hidden: true,
-          data: {
-            author: "Jeffry Jacobs 3",
-            rate: 5,
-            role: "Business analytics",
-            message: "Helped my dad move to other countries in 2 months",
-          },
-        },
-      ],
       slideLeft: false,
       slideRight: false,
       firstReview: 0,
@@ -297,7 +261,8 @@ export default {
       }, 150);
     },
   },
-  components: { HeaderComponent, ReviewComponent, LeftArrow, RightArrow },
+  components: { HeaderComponent, ReviewComponent, LeftArrow, RightArrow, FeatureSvg, ServiceCard, ServiceQuestionCard },
+  mixins:[ReviewsMixin, ServicesMixin]
 };
 </script>
 
