@@ -32,6 +32,7 @@ module.exports = {
         DEFAULT: "#757575",
       },
       dark:{
+        400:"rgba(0, 0, 0, 0.4)",
         DEFAULT: "#0F0F10",
       },
     },
