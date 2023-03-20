@@ -149,7 +149,8 @@
         class="absolute bg-blue-400 blur-[170px] rounded-[190px] w-[190px] h-[190px] z-0 -right-[133px] -bottom-[136px]"
       ></div>
     </section>
-    <footer class="mt-10"></footer>
+
+    <FooterComponent class="mt-[112px]"></FooterComponent>
   </div>
 </template>
 
@@ -159,6 +160,7 @@ import ReviewComponent from "../components/ReviewComponent.vue";
 import ServiceCard from "../components/ServiceCard.vue";
 import ServiceQuestionCard from "../components/ServiceQuestionCard.vue";
 import TeamMember from "../components/TeamMember.vue";
+import FooterComponent from "../components/FooterComponent.vue";
 
 import ReviewsMixin from "../components/mixins/ReviewsMixin.vue";
 import ServicesMixin from "../components/mixins/ServicesMixin.vue";
@@ -351,6 +353,7 @@ export default {
     ServiceQuestionCard,
     FeatureLeftSvg,
     TeamMember,
+    FooterComponent
   },
   mixins: [ReviewsMixin, ServicesMixin, TeamMixin],
 };

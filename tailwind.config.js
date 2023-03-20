@@ -17,8 +17,10 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       white: "#ffffff",
+      black: "#000000",
       blue: {
         200: "#DBEBFF",
+        300: "#A3ABF4",
         400: "#3060C9",
         500: "#3b82f6",
         600: "#2563eb",
@@ -29,6 +31,7 @@ module.exports = {
         question: "rgba(41, 103, 240, 0.8)",
       },
       gray: {
+        200:"#F9FBFF",
         bg: "#F2F6FF",
         300: "rgb(0 0 0 / 35%)",
         DEFAULT: "#757575",
