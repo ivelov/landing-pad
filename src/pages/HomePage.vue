@@ -154,7 +154,6 @@
     <FooterComponent class="mt-[112px]"></FooterComponent>
   </div>
 </template>
-<!-- eslint-disable vue/no-unused-components -->
 <script>
 
 import HeaderComponent from "../components/HeaderComponent.vue";
@@ -183,7 +182,7 @@ export default {
       lastReview: 2,
       sliderRunning: false,
       windowWidth: window.innerWidth,
-      scroll: 0
+      scroll: window.scrollY
     };
   },
   mounted() {

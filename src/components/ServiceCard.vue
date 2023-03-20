@@ -19,10 +19,10 @@
         class="mt-5 first:mt-0"
       >
         <router-link
-          to="#"
+          :to="{ path: '/services', query: { service: data.service, category:index }}"
           class="flex justify-between items-center gap-3 text-base leading-[19px]"
         >
-          <span class="w-56">{{ category }}</span>
+          <span class="w-56">{{ category.name }}</span>
           <RightArrow class="w-[7px] h-3 inline"></RightArrow>
         </router-link>
       </li>
@@ -41,8 +41,6 @@ export default {
       required: true,
     },
   },
-  mounted() {},
-  methods: {},
   components: { BreakLineSvg, RightArrow },
 };
 </script>
