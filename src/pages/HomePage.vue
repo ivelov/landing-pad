@@ -1,20 +1,21 @@
 <template>
-  <div class="overflow-hidden">
+  <div >
+    <HeaderComponent current-page="home" :transparent="scroll < 100" ></HeaderComponent>
     <section
-      class="relative z-10 text-white h-[700px] sm:h-[900px] rounded-b-lg bg-cover bg-no-repeat bg-center bg-blend-multiply bg-gray-300 bg-[url('../public/img/home-header.jfif')]"
+      class="relative mt-[-80px] z-10 text-white h-[700px] sm:h-[900px] rounded-b-lg bg-cover bg-no-repeat bg-center bg-blend-multiply bg-gray-300 bg-[url('../public/img/home-header.jfif')]"
     >
-      <HeaderComponent current-page="home"></HeaderComponent>
+    &nbsp;
       <h2
-        class="text-[54px] font-bold leading-[4.5rem] max-w-lg ml-24 mt-20 sm:mt-[187px]"
+        class="text-[54px] font-bold leading-[4.5rem] max-w-lg ml-10 min-[500px]:ml-24 mt-16 sm:mt-[173px]"
       >
         Moving to Portugal?
       </h2>
-      <p class="text-2xl ml-24 mt-[10px] max-w-[434px] font-gilroy">
+      <p class="text-2xl ml-10 min-[500px]:ml-24 mt-[10px] max-w-[434px] font-gilroy">
         Let the experts of the ACK ecosystem handle your administrative
         headaches
       </p>
       <button
-        class="rounded bg-blue text-white ml-24 mt-10 py-3.5 px-10 w-[270px] font-medium text-lg hover:bg-blue-700 transition-colors"
+        class="rounded bg-blue text-white ml-10 min-[500px]:ml-24 mt-10 py-3.5 px-10 w-[270px] font-medium text-lg hover:bg-blue-700 transition-colors"
       >
         Help to emigrate
       </button>
@@ -54,7 +55,7 @@
     </section>
 
     <!-- Services -->
-    <section class="mt-32 relative">
+    <section class="mt-32 relative overflow-hidden">
       <div
         class="absolute bg-gray-bg blur-[58px] rounded-[190px] w-[255px] h-[255px] z-0 -right-[65px] top-[42%]"
       ></div>
@@ -153,8 +154,9 @@
     <FooterComponent class="mt-[112px]"></FooterComponent>
   </div>
 </template>
-
+<!-- eslint-disable vue/no-unused-components -->
 <script>
+
 import HeaderComponent from "../components/HeaderComponent.vue";
 import ReviewComponent from "../components/ReviewComponent.vue";
 import ServiceCard from "../components/ServiceCard.vue";
@@ -181,17 +183,24 @@ export default {
       lastReview: 2,
       sliderRunning: false,
       windowWidth: window.innerWidth,
+      scroll: 0
     };
   },
   mounted() {
     window.addEventListener("resize", this.onWidthChange);
     this.onWidthChange();
     this.updateReviews();
+
+    window.addEventListener('scroll', this.onScroll);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.onWidthChange);
+    window.removeEventListener("scroll", this.onScroll);
   },
   methods: {
+    onScroll(){
+      this.scroll = window.scrollY;
+    },
     onWidthChange() {
       this.windowWidth = window.innerWidth;
       let newLast = this.lastReview;
