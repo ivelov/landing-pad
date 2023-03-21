@@ -4,6 +4,7 @@
       current-page="404"
       transparent
       text-white
+      @onButtonClick="scrollToContacts"
     ></HeaderComponent>
   
     <h1 class="text-white font-medium text-[3.375rem] leading-[4.5rem] mt-10 sm:mt-20 md:mt-[214px] w-max mx-auto relative">
@@ -29,28 +30,9 @@ import FeatureLeftSvg from "../components/svg/FeatureLeftSvg.vue";
 
 export default {
   name: "NotFoundPage",
-  data() {
-    return {
-      scroll: window.scrollY,
-      blog: {},
-    };
-  },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-
-    if (!this.$route.params.id || !this.blogs[this.$route.params.id - 1]) {
-      this.$router.push("/blogs");
-      return;
-    }
-
-    this.blog = this.blogs[this.$route.params.id - 1];
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
   methods: {
-    onScroll() {
-      this.scroll = window.scrollY;
+    scrollToContacts() {
+      this.$router.push({ path: "/", query: { contacts: true } });
     },
   },
   components: { HeaderComponent, FeatureLeftSvg },

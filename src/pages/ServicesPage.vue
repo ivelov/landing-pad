@@ -1,6 +1,10 @@
 <template>
   <div>
-    <HeaderComponent current-page="services" :with-shadow="scroll > 50"></HeaderComponent>
+    <HeaderComponent
+      current-page="services"
+      :with-shadow="scroll > 50"
+      @onButtonClick="scrollToContacts"
+    ></HeaderComponent>
     <div class="overflow-hidden">
       <section class="relative z-10">
         <h1 class="text-black text-[2rem] mt-[87px] ml-[7%]">
@@ -82,13 +86,12 @@
               </h3>
 
               <div class="mt-[11px] mx-auto w-fit">
-                <router-link to="#">
-                  <div
-                    class="relative z-10 rounded-lg text-blue-text text-lg text-center py-[9px] px-[49px] bg-white shadow-4x10 hover:bg-blue-200 transition-colors"
-                  >
-                    Ask a question
-                  </div>
-                </router-link>
+                <button
+                  class="relative z-10 rounded-lg text-blue-text text-lg text-center py-[9px] px-[49px] bg-white shadow-4x10 hover:bg-blue-200 transition-colors"
+                  @click="scrollToContacts"
+                >
+                  Ask a question
+                </button>
               </div>
             </article>
           </div>
@@ -125,11 +128,11 @@ export default {
   data() {
     return {
       curService: {},
-      scroll: window.scrollY
+      scroll: window.scrollY,
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener("scroll", this.onScroll);
 
     if (this.$route.query.service) {
       this.services.forEach((service) => {
@@ -162,8 +165,11 @@ export default {
     selectService(service) {
       this.curService = service;
     },
-    onScroll(){
+    onScroll() {
       this.scroll = window.scrollY;
+    },
+    scrollToContacts() {
+      this.$router.push({ path: "/", query: { contacts: true } });
     },
   },
   components: { HeaderComponent, FeatureSvg, UpArrow, DownArrow, BreakLineSvg },

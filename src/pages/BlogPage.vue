@@ -4,6 +4,7 @@
       current-page="blogs"
       :transparent="scroll < 50"
       :with-shadow="scroll > 50"
+      @onButtonClick="scrollToContacts"
     ></HeaderComponent>
     <div class="overflow-hidden relative mt-[-80px] pt-20">
       <div
@@ -57,10 +58,10 @@ export default {
   mounted() {
     window.addEventListener("scroll", this.onScroll);
 
-    // if (!this.$route.params.id || !this.blogs[this.$route.params.id - 1]) {
-    //   this.$router.push("/blogs");
-    //   return;
-    // }
+    if (!this.$route.params.id || !this.blogs[this.$route.params.id - 1]) {
+      this.$router.push("/blogs");
+      return;
+    }
 
     this.blog = this.blogs[this.$route.params.id - 1];
   },
@@ -71,6 +72,9 @@ export default {
     onScroll() {
       this.scroll = window.scrollY;
     },
+    scrollToContacts(){
+      this.$refs.contacts.$el.scrollIntoView({ behavior: 'smooth' });
+    }
   },
   components: { HeaderComponent, FooterComponent, LeftArrow },
   mixins: [BlogsMixin],

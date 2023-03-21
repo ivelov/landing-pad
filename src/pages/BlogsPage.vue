@@ -4,6 +4,7 @@
       current-page="blogs"
       :transparent="scroll < 50"
       :with-shadow="scroll > 50"
+      @onButtonClick="scrollToContacts"
     ></HeaderComponent>
     <div class="overflow-hidden mt-[-80px] pt-20">
       <div
@@ -43,7 +44,7 @@
         </ul>
       </section>
 
-      <FooterComponent class="mt-[92px]"></FooterComponent>
+      <FooterComponent ref="contacts" class="mt-[92px]"></FooterComponent>
     </div>
   </div>
 </template>
@@ -71,6 +72,9 @@ export default {
     onScroll() {
       this.scroll = window.scrollY;
     },
+    scrollToContacts(){
+      this.$refs.contacts.$el.scrollIntoView({ behavior: 'smooth' });
+    }
   },
   components: { HeaderComponent, FeatureSvg, FooterComponent },
   mixins: [BlogsMixin],

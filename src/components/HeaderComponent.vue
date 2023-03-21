@@ -73,7 +73,8 @@
       <div class="flex-auto basis-[28.57%] flex justify-center">
         <button
           class="rounded bg-blue text-white py-3.5 px-[42px] font-medium hover:bg-blue-700 transition-colors"
-        >
+          @click="scrollToContacts"
+          >
           Book an online
         </button>
       </div>
@@ -255,6 +256,9 @@ export default {
       this.dropdown = false;
       document.removeEventListener("click", this.hide);
     },
+    scrollToContacts(){
+      this.$emit('onButtonClick')
+    }
   },
   components: { LogoSvg, BurgerSvg, RightArrow },
 };

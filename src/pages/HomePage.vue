@@ -1,6 +1,6 @@
 <template>
   <div >
-    <HeaderComponent current-page="home" :transparent="scroll < 100" :with-shadow="scroll > 100" :text-white="scroll < 100"></HeaderComponent>
+    <HeaderComponent @onButtonClick="scrollToContacts" current-page="home" :transparent="scroll < 100" :with-shadow="scroll > 100" :text-white="scroll < 100"></HeaderComponent>
     <section
       class="relative mt-[-80px] z-10 text-white h-[700px] sm:h-[900px] rounded-b-lg bg-cover bg-no-repeat bg-center bg-blend-multiply bg-gray-300 bg-[url('../public/img/home-header.jfif')]"
     >
@@ -16,7 +16,8 @@
       </p>
       <button
         class="rounded bg-blue text-white ml-10 min-[500px]:ml-24 mt-10 py-3.5 px-10 w-[270px] font-medium text-lg hover:bg-blue-700 transition-colors"
-      >
+        @click="scrollToContacts"
+        >
         Help to emigrate
       </button>
     </section>
@@ -92,7 +93,7 @@
             :key="service.service"
             :data="service"
           ></ServiceCard>
-          <ServiceQuestionCard></ServiceQuestionCard>
+          <ServiceQuestionCard @onButtonClick="scrollToContacts"></ServiceQuestionCard>
         </div>
       </div>
     </section>
@@ -151,7 +152,7 @@
       ></div>
     </section>
 
-    <FooterComponent class="mt-[92px]"></FooterComponent>
+    <FooterComponent ref="contacts" class="mt-[92px]"></FooterComponent>
   </div>
 </template>
 <script>
@@ -191,6 +192,11 @@ export default {
     this.updateReviews();
 
     window.addEventListener('scroll', this.onScroll);
+
+    if(this.$route.query.contacts){
+      this.$router.replace({ query: undefined });
+      this.scrollToContacts();
+    }
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.onWidthChange);
@@ -350,6 +356,9 @@ export default {
         this.sliderRunning = false;
       }, 150);
     },
+    scrollToContacts(){
+      this.$refs.contacts.$el.scrollIntoView({ behavior: 'smooth' });
+    }
   },
   components: {
     HeaderComponent,
