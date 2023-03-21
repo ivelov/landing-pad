@@ -11,7 +11,7 @@
 
       <nav class="flex justify-around flex-auto basis-[42.86%] text-xl">
         <router-link
-          to="/home"
+          to="/"
           class="hover:text-gray transition-colors"
           :class="currentPage === 'home' ? 'font-bold' : ''"
           >Home</router-link

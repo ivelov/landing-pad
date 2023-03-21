@@ -11,8 +11,8 @@
     </h3>
 
     <div class="mt-[19px] mx-auto w-fit">
-      <router-link to="#" >
-        <div class="relative z-10 rounded-lg text-blue-text text-lg text-center py-[14px] px-[49px] bg-white shadow-4x10">
+      <router-link to="#">
+        <div class="relative z-10 rounded-lg text-blue-text text-lg text-center py-[14px] px-[49px] bg-white shadow-4x10 hover:bg-blue-200 transition-colors">
           Ask a question
         </div>
     </router-link>
