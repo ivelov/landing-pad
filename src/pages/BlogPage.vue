@@ -9,7 +9,7 @@
       <div
         class="absolute bg-gray-bg blur-[58px] rounded-[190px] w-[380px] h-[380px] z-0 -right-[82px] -top-[51px]"
       ></div>
-      
+
       <section class="relative z-10 px-[6.7%] mt-6">
         <router-link
           to="/blogs"
@@ -57,10 +57,10 @@ export default {
   mounted() {
     window.addEventListener("scroll", this.onScroll);
 
-    if (!this.$route.params.id || !this.blogs[this.$route.params.id - 1]) {
-      this.$router.push("/blogs");
-      return;
-    }
+    // if (!this.$route.params.id || !this.blogs[this.$route.params.id - 1]) {
+    //   this.$router.push("/blogs");
+    //   return;
+    // }
 
     this.blog = this.blogs[this.$route.params.id - 1];
   },
