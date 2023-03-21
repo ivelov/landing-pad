@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderComponent current-page="services" :with-shadow="scroll > 50"></HeaderComponent>
+    <HeaderComponent current-page="services"></HeaderComponent>
     <div class="overflow-hidden">
       <section class="relative z-10">
         <h1 class="text-black text-[2rem] mt-[87px] ml-[7%]">
@@ -125,12 +125,9 @@ export default {
   data() {
     return {
       curService: {},
-      scroll: window.scrollY
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll);
-
     if (this.$route.query.service) {
       this.services.forEach((service) => {
         if (service.service === this.$route.query.service) {
@@ -148,9 +145,6 @@ export default {
       }
     }
   },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-  },
   methods: {
     toggleCategory(category) {
       if (category.expanded) {
@@ -161,9 +155,6 @@ export default {
     },
     selectService(service) {
       this.curService = service;
-    },
-    onScroll(){
-      this.scroll = window.scrollY;
     },
   },
   components: { HeaderComponent, FeatureSvg, UpArrow, DownArrow, BreakLineSvg },

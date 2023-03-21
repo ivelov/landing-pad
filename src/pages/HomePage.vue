@@ -1,6 +1,6 @@
 <template>
   <div >
-    <HeaderComponent current-page="home" :transparent="scroll < 100" ></HeaderComponent>
+    <HeaderComponent current-page="home" :transparent="scroll < 100" :with-shadow="scroll > 100"></HeaderComponent>
     <section
       class="relative mt-[-80px] z-10 text-white h-[700px] sm:h-[900px] rounded-b-lg bg-cover bg-no-repeat bg-center bg-blend-multiply bg-gray-300 bg-[url('../public/img/home-header.jfif')]"
     >

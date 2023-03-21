@@ -1,6 +1,6 @@
 <template>
-  <div class="sticky top-0 z-30 transition-colors"
-  :class="transparent?'':'bg-white shadow-14x28'">
+  <div class="sticky top-0 z-30 transition-all"
+  :class="{'bg-white':!transparent, 'shadow-14x28':withShadow}">
     <header
       v-if="width > 1000"
       class="flex justify-around items-center py-3.5"
@@ -191,6 +191,10 @@ export default {
       type: String,
     },
     transparent:{
+      type: Boolean,
+      default: false
+    },
+    withShadow:{
       type: Boolean,
       default: false
     }
