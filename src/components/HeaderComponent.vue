@@ -1,49 +1,72 @@
 <template>
-  <div class="sticky top-0 z-30 transition-all"
-  :class="{'bg-white':!transparent, 'shadow-14x28':withShadow}">
+  <div
+    class="sticky top-0 z-30 transition-all"
+    :class="{ 'bg-white': !transparent, 'shadow-14x28': withShadow }"
+  >
     <header
       v-if="width > 1000"
       class="flex justify-around items-center py-3.5"
-      :class="transparent?'text-white':'text-dark'"
+      :class="textWhite ? 'text-white' : 'text-dark'"
     >
-      <LogoSvg class="flex-auto basis-[28.57%] h-[46px]"
-      :class="transparent?'text-white':'text-blue'"></LogoSvg>
+      <div class="flex-auto basis-[28.57%] h-[46px] flex justify-center">
+        <router-link to="/">
+          <LogoSvg :class="textWhite ? 'text-white' : 'text-blue'"></LogoSvg>
+        </router-link>
+      </div>
 
       <nav class="flex justify-around flex-auto basis-[42.86%] text-xl">
         <router-link
           to="/"
-          class="hover:text-gray transition-colors"
-          :class="currentPage === 'home' ? 'font-bold' : ''"
+          class="transition-colors"
+          :class="[
+            currentPage === 'home' ? 'font-bold' : '',
+            textWhite ? 'hover:text-gray-bg' : 'hover:text-gray',
+          ]"
           >Home</router-link
         >
         <router-link
           to="/services"
-          class="hover:text-gray transition-colors"
-          :class="currentPage === 'services' ? 'font-bold' : ''"
+          class="transition-colors"
+          :class="[
+            currentPage === 'services' ? 'font-bold' : '',
+            textWhite ? 'hover:text-gray-bg' : 'hover:text-gray',
+          ]"
           >Services</router-link
         >
         <router-link
           to="/home"
-          class="hover:text-gray transition-colors"
-          :class="currentPage === 'about us' ? 'font-bold' : ''"
+          class="transition-colors"
+          :class="[
+            currentPage === 'about us' ? 'font-bold' : '',
+            textWhite ? 'hover:text-gray-bg' : 'hover:text-gray',
+          ]"
           >About us</router-link
         >
         <router-link
           to="/home"
-          class="hover:text-gray transition-colors"
-          :class="currentPage === 'team' ? 'font-bold' : ''"
+          class="transition-colors"
+          :class="[
+            currentPage === 'team' ? 'font-bold' : '',
+            textWhite ? 'hover:text-gray-bg' : 'hover:text-gray',
+          ]"
           >Team</router-link
         >
         <router-link
           to="/home"
-          class="hover:text-gray transition-colors"
-          :class="currentPage === 'contact' ? 'font-bold' : ''"
+          class="transition-colors"
+          :class="[
+            currentPage === 'contact' ? 'font-bold' : '',
+            textWhite ? 'hover:text-gray-bg' : 'hover:text-gray',
+          ]"
           >Contact</router-link
         >
         <router-link
           to="/blogs"
-          class="hover:text-gray transition-colors"
-          :class="currentPage === 'blog' ? 'font-bold' : ''"
+          class="transition-colors"
+          :class="[
+            currentPage === 'blog' ? 'font-bold' : '',
+            textWhite ? 'hover:text-gray-bg' : 'hover:text-gray',
+          ]"
           >Blog</router-link
         >
       </nav>
@@ -56,8 +79,15 @@
       </div>
     </header>
 
-    <header v-else class="flex justify-between items-center mx-[7%] py-3.5 text-white">
-      <LogoSvg class="h-[46px]" :class="transparent?'text-white':'text-blue'"></LogoSvg>
+    <header
+      v-else
+      class="flex justify-between items-center mx-[7%] py-3.5 text-white"
+    >
+    <div class="h-[46px] flex justify-center">
+        <router-link to="/">
+          <LogoSvg :class="textWhite ? 'text-white' : 'text-blue'"></LogoSvg>
+        </router-link>
+      </div>
 
       <div class="relative">
         <button @click="expand">
@@ -158,17 +188,13 @@
                 to="#"
                 class="flex justify-between items-center gap-3"
               >
-                <span
-                  class="w-24"
-                  >Book an online</span
-                >
+                <span class="w-24">Book an online</span>
                 <RightArrow class="w-[7px] h-3 inline"></RightArrow>
               </router-link>
             </div>
           </nav>
         </div>
       </div>
-
     </header>
   </div>
 </template>
@@ -190,14 +216,18 @@ export default {
     currentPage: {
       type: String,
     },
-    transparent:{
+    transparent: {
       type: Boolean,
-      default: false
+      default: false,
     },
-    withShadow:{
+    withShadow: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
+    textWhite: {
+      type: Boolean,
+      default: false,
+    },
   },
   mounted() {
     window.addEventListener("resize", this.onWidthChange);

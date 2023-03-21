@@ -1,14 +1,24 @@
 <template>
   <div>
-    <HeaderComponent current-page="blogs" :with-shadow="scroll > 50"></HeaderComponent>
-    <div class="overflow-hidden relative">
+    <HeaderComponent
+      current-page="blogs"
+      :transparent="scroll < 50"
+      :with-shadow="scroll > 50"
+    ></HeaderComponent>
+    <div class="overflow-hidden relative mt-[-80px] pt-20">
+      <div
+        class="absolute bg-gray-bg blur-[58px] rounded-[190px] w-[380px] h-[380px] z-0 -right-[82px] -top-[51px]"
+      ></div>
+      
       <section class="relative z-10 px-[6.7%] mt-6">
-        <router-link to="/blogs" class="text-dark hover:text-gray-600 flex items-center leading-6 text-lg font-light">
+        <router-link
+          to="/blogs"
+          class="text-dark hover:text-gray-600 flex items-center leading-6 text-lg font-light"
+        >
           <LeftArrow class="inline w-6 h-6 mr-1"></LeftArrow>
           Back to all articles
         </router-link>
-        
-        
+
         <h1 class="text-dark text-5xl mt-11 leading-[3.32.rem]">
           {{ blog.title }}
         </h1>
@@ -16,16 +26,15 @@
           <small>{{ blog.date }}</small>
         </p>
 
-       <img :src="blog.image" alt="Title image" class="w-full mt-5">
-       <p class="mt-6 text-gray-600 text-xl leading-7" v-html="blog.content">
-
-       </p>
-
-       
+        <img :src="blog.image" alt="Title image" class="w-full mt-5" />
+        <p
+          class="mt-6 text-gray-600 text-xl leading-7"
+          v-html="blog.content"
+        ></p>
       </section>
       <div
-          class="absolute bg-gray-bg blur-[58px] rounded-[190px] w-[238px] h-[238px] z-0 -left-[91px] top-[50%]"
-        ></div>
+        class="absolute bg-gray-bg blur-[58px] rounded-[190px] w-[238px] h-[238px] z-0 -left-[91px] top-[50%]"
+      ></div>
       <FooterComponent class="mt-[92px]"></FooterComponent>
     </div>
   </div>
@@ -42,14 +51,14 @@ export default {
   data() {
     return {
       scroll: window.scrollY,
-      blog: {}
+      blog: {},
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener("scroll", this.onScroll);
 
-    if(!this.$route.params.id || !this.blogs[this.$route.params.id - 1]){
-      this.$router.push('/blogs');
+    if (!this.$route.params.id || !this.blogs[this.$route.params.id - 1]) {
+      this.$router.push("/blogs");
       return;
     }
 
@@ -59,7 +68,7 @@ export default {
     window.removeEventListener("scroll", this.onScroll);
   },
   methods: {
-    onScroll(){
+    onScroll() {
       this.scroll = window.scrollY;
     },
   },
