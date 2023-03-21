@@ -36,6 +36,7 @@ module.exports = {
         200: "#F9FBFF",
         bg: "#F2F6FF",
         300: "rgb(0 0 0 / 35%)",
+        400: "#7A7A7A",
         DEFAULT: "#757575",
         text: "#B3B3B3",
         600: "#454953",

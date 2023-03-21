@@ -14,7 +14,7 @@
           <li v-for="blog in blogs" :key="blog.id" >
             <article class="p-4 mt-6 rounded-2xl bg-white shadow-3x28">
               <img :src="blog.image" alt="Title image" class="w-full mb-4">
-              <router-link :to="`/blogs/${blog.id}`" class="font-medium text-xl text-dark leading-[1.66rem] hover:text-blue-text">
+              <router-link :to="`/blogs/${blog.id}`" class="font-medium text-xl text-dark leading-[1.66rem] hover:text-blue-text transition-colors">
                 {{ blog.title }}
               </router-link>
               <p class="mt-2 leading-5 text-gray-text">
