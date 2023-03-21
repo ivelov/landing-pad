@@ -33,10 +33,12 @@ module.exports = {
         question: "rgba(41, 103, 240, 0.8)",
       },
       gray: {
-        200:"#F9FBFF",
+        200: "#F9FBFF",
         bg: "#F2F6FF",
         300: "rgb(0 0 0 / 35%)",
         DEFAULT: "#757575",
+        text: "#B3B3B3",
+        600: "#454953",
       },
       dark: {
         400: "rgba(0, 0, 0, 0.4)",

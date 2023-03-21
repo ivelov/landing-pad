@@ -41,7 +41,7 @@
           >Contact</router-link
         >
         <router-link
-          to="/home"
+          to="/blogs"
           class="hover:text-gray transition-colors"
           :class="currentPage === 'blog' ? 'font-bold' : ''"
           >Blog</router-link
@@ -141,7 +141,7 @@
 
             <div class="mt-2">
               <router-link
-                to="#"
+                to="/blogs"
                 class="flex justify-between items-center gap-3"
               >
                 <span

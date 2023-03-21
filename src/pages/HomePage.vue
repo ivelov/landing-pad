@@ -133,7 +133,7 @@
       <div class="relative z-10">
         &nbsp;
       <h1 class="relative text-[54px] leading-[4.5rem] w-min mx-auto mt-[71px]">
-        <FeatureLeftSvg class="inline absolute -top-10 -translate-x-[93%] text-blue-text"></FeatureLeftSvg>
+        <FeatureLeftSvg class="inline absolute -top-7 -translate-x-[93%] text-blue-text h-[51px] w-[51px]"></FeatureLeftSvg>
         Team
       </h1>
 
@@ -151,7 +151,7 @@
       ></div>
     </section>
 
-    <FooterComponent class="mt-[112px]"></FooterComponent>
+    <FooterComponent class="mt-[92px]"></FooterComponent>
   </div>
 </template>
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <footer class="relative overflow-hidden">
+  <footer class="relative overflow-hidden pt-5">
     <div class="relative z-10">
       <h1 class="text-center text-[54px] leading-[4.5rem] relative">
         Contacts
