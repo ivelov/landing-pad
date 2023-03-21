@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="overflow-hidden">
     <HeaderComponent current-page="services"></HeaderComponent>
-    <section class="relative">
+    
+    <section class="relative z-10">
       <h1 class="text-black text-[2rem] mt-[87px] ml-[7%]">
         {{ curService.name }}
         <FeatureSvg
@@ -65,12 +66,19 @@
         </div>
       </div>
     </section>
-    <footer class="text-blue-line mt-[70px] mb-[21px] text-smleading-4 text-center">      
+
+    <footer class="text-blue-line mt-[70px] mb-[21px] text-smleading-4 text-center relative">   
+      <div class="relative z-10">
         Terms of Service
         <span class="text-black font-gilroy font-normal">and</span> Privacy
         Policy.
+      </div>   
+        
+
+        <div
+        class="absolute bg-gray-bg blur-[58px] rounded-[190px] w-[230px] h-[207px] z-0 -left-[35px] -top-[120px]"
+      ></div>
     </footer>
-    
   </div>
 </template>
 
@@ -97,6 +105,10 @@ export default {
           this.$set(service.categories[parseInt(this.$route.query.category)], "expanded", true);
         }
       });
+    }else{
+      if(this.services[0]){
+        this.curService = this.services[0];
+      }
     }
   },
   methods: {

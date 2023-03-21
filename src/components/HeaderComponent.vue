@@ -12,31 +12,37 @@
       <nav class="flex justify-around flex-auto basis-[42.86%] text-xl">
         <router-link
           to="/home"
+          class="hover:text-gray transition-colors"
           :class="currentPage === 'home' ? 'font-bold' : ''"
           >Home</router-link
         >
         <router-link
-          to="/home"
+          to="/services"
+          class="hover:text-gray transition-colors"
           :class="currentPage === 'services' ? 'font-bold' : ''"
           >Services</router-link
         >
         <router-link
           to="/home"
+          class="hover:text-gray transition-colors"
           :class="currentPage === 'about us' ? 'font-bold' : ''"
           >About us</router-link
         >
         <router-link
           to="/home"
+          class="hover:text-gray transition-colors"
           :class="currentPage === 'team' ? 'font-bold' : ''"
           >Team</router-link
         >
         <router-link
           to="/home"
+          class="hover:text-gray transition-colors"
           :class="currentPage === 'contact' ? 'font-bold' : ''"
           >Contact</router-link
         >
         <router-link
           to="/home"
+          class="hover:text-gray transition-colors"
           :class="currentPage === 'blog' ? 'font-bold' : ''"
           >Blog</router-link
         >
@@ -65,7 +71,7 @@
           <nav class="text-xl text-black">
             <div>
               <router-link
-                to="#"
+                to="/"
                 class="flex justify-between items-center gap-3"
               >
                 <span
@@ -79,7 +85,7 @@
 
             <div class="mt-2">
               <router-link
-                to="#"
+                to="/services"
                 class="flex justify-between items-center gap-3"
               >
                 <span
