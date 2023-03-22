@@ -225,11 +225,11 @@
     <footer
       class="text-black mt-[32px] mb-5 text-sm leading-4 text-center relative"
     >
-      <router-link to="/terms-of-service" class="text-blue-line"
+      <router-link :to="`${$publicPath}terms-of-service`" class="text-blue-line"
         >Terms of Service
       </router-link>
       <span class="font-gilroy font-normal">and</span>
-      <router-link to="/privacy-policy" class="text-blue-line">
+      <router-link :to="`${$publicPath}privacy-policy`" class="text-blue-line">
         Privacy Policy</router-link
       >.
     </footer>
@@ -257,7 +257,7 @@ export default {
       this.scroll = window.scrollY;
     },
     scrollToContacts() {
-      this.$refs.contacts.$el.scrollIntoView({ behavior: "smooth" });
+      this.$router.push({ path: this.$publicPath, query: { contacts: true } });
     },
   },
   components: { HeaderComponent },

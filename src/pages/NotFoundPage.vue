@@ -16,7 +16,7 @@
 Reload the page or return to the home screen
     </p>
     <div class="flex justify-center mt-[30px]">
-      <router-link to="/" class="text-white rounded leading-[1.813rem] text-lg py-[14px] px-10 text-center w-max bg-blue hover:bg-blue-700 transition-colors">
+      <router-link :to="$publicPath" class="text-white rounded leading-[1.813rem] text-lg py-[14px] px-10 text-center w-max bg-blue hover:bg-blue-700 transition-colors">
       Go to main page
     </router-link>
     </div>
@@ -32,7 +32,7 @@ export default {
   name: "NotFoundPage",
   methods: {
     scrollToContacts() {
-      this.$router.push({ path: "/", query: { contacts: true } });
+      this.$router.push({ path: this.$publicPath, query: { contacts: true } });
     },
   },
   components: { HeaderComponent, FeatureLeftSvg },

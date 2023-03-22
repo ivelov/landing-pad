@@ -9,14 +9,14 @@
       :class="textWhite ? 'text-white' : 'text-dark'"
     >
       <div class="flex-auto basis-[28.57%] h-[46px] flex justify-center">
-        <router-link to="/">
+        <router-link :to="$publicPath">
           <LogoSvg :class="textWhite ? 'text-white' : 'text-blue'"></LogoSvg>
         </router-link>
       </div>
 
       <nav class="flex justify-around flex-auto basis-[42.86%] text-xl">
         <router-link
-          to="/"
+          :to="$publicPath"
           class="transition-colors"
           :class="[
             currentPage === 'home' ? 'font-bold' : '',
@@ -25,7 +25,7 @@
           >Home</router-link
         >
         <router-link
-          to="/services"
+        :to="`${$publicPath}services`"
           class="transition-colors"
           :class="[
             currentPage === 'services' ? 'font-bold' : '',
@@ -34,7 +34,7 @@
           >Services</router-link
         >
         <router-link
-          to="/home"
+          :to="`${$publicPath}`"
           class="transition-colors"
           :class="[
             currentPage === 'about us' ? 'font-bold' : '',
@@ -43,7 +43,7 @@
           >About us</router-link
         >
         <router-link
-          to="/home"
+          :to="`${$publicPath}`"
           class="transition-colors"
           :class="[
             currentPage === 'team' ? 'font-bold' : '',
@@ -52,7 +52,7 @@
           >Team</router-link
         >
         <router-link
-          to="/home"
+          :to="`${$publicPath}`"
           class="transition-colors"
           :class="[
             currentPage === 'contact' ? 'font-bold' : '',
@@ -61,7 +61,7 @@
           >Contact</router-link
         >
         <router-link
-          to="/blogs"
+          :to="`${$publicPath}blogs`"
           class="transition-colors"
           :class="[
             currentPage === 'blog' ? 'font-bold' : '',
@@ -85,7 +85,7 @@
       class="flex justify-between items-center mx-[7%] py-3.5 text-white"
     >
     <div class="h-[46px] flex justify-center">
-        <router-link to="/">
+        <router-link :to="$publicPath">
           <LogoSvg :class="textWhite ? 'text-white' : 'text-blue'"></LogoSvg>
         </router-link>
       </div>
@@ -102,7 +102,7 @@
           <nav class="text-xl text-black">
             <div>
               <router-link
-                to="/"
+                :to="$publicPath"
                 class="flex justify-between items-center gap-3"
               >
                 <span
@@ -116,7 +116,7 @@
 
             <div class="mt-2">
               <router-link
-                to="/services"
+                :to="`${$publicPath}services`"
                 class="flex justify-between items-center gap-3"
               >
                 <span
@@ -172,7 +172,7 @@
 
             <div class="mt-2">
               <router-link
-                to="/blogs"
+                :to="`${$publicPath}blogs`"
                 class="flex justify-between items-center gap-3"
               >
                 <span
@@ -185,13 +185,13 @@
             </div>
 
             <div class="mt-2">
-              <router-link
-                to="#"
+              <button
                 class="flex justify-between items-center gap-3"
+                @click="scrollToContacts"
               >
                 <span class="w-24">Book an online</span>
                 <RightArrow class="w-[7px] h-3 inline"></RightArrow>
-              </router-link>
+              </button>
             </div>
           </nav>
         </div>

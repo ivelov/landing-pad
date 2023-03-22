@@ -13,7 +13,7 @@
 
       <section class="relative z-10 px-[6.7%] mt-6">
         <router-link
-          to="/blogs"
+          :to="`${$publicPath}blogs`"
           class="text-dark hover:text-gray-600 flex items-center leading-6 text-lg font-light"
         >
           <LeftArrow class="inline w-6 h-6 mr-1"></LeftArrow>
@@ -59,7 +59,7 @@ export default {
     window.addEventListener("scroll", this.onScroll);
 
     if (!this.$route.params.id || !this.blogs[this.$route.params.id - 1]) {
-      this.$router.push("/blogs");
+      this.$router.push(`${this.$publicPath}blogs`);
       return;
     }
 

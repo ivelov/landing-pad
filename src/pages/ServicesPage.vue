@@ -62,7 +62,7 @@
                     <button>
                       <img
                         class="inline mr-[10px] w-5 h-5"
-                        :src="`/img/services/${service.image}`"
+                        :src="`${$publicPath}img/services/${service.image}`"
                         alt=""
                       />
                       {{ service.name }}
@@ -102,11 +102,11 @@
         class="text-black mt-[70px] mb-[21px] text-sm leading-4 text-center relative"
       >
         <div class="relative z-10">
-          <router-link to="/terms-of-service" class="text-blue-line"
+          <router-link :to="`${$publicPath}terms-of-service`" class="text-blue-line"
             >Terms of Service
           </router-link>
           <span class="font-gilroy font-normal">and</span>
-          <router-link to="/privacy-policy" class="text-blue-line">
+          <router-link :to="`${$publicPath}/privacy-policy`" class="text-blue-line">
             Privacy Policy</router-link
           >.
         </div>
@@ -173,7 +173,7 @@ export default {
       this.scroll = window.scrollY;
     },
     scrollToContacts() {
-      this.$router.push({ path: "/", query: { contacts: true } });
+      this.$router.push({ path: this.$publicPath, query: { contacts: true } });
     },
   },
   components: { HeaderComponent, FeatureSvg, UpArrow, DownArrow, BreakLineSvg },

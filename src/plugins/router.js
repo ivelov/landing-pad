@@ -8,36 +8,37 @@ import NotFoundPage from "../pages/NotFoundPage";
 import TermsOfServicePage from "../pages/TermsOfServicePage";
 import PrivacyPolicyPage from "../pages/PrivacyPolicyPage";
 
+let $publicPath = process.env.BASE_URL;
 
 Vue.use(VueRouter);
 const router = new VueRouter({
     routes: [
         {
-            path: "/",
+            path: `${$publicPath}`,
             component: HomePage,
         },
         {
-            path: "/services",
+            path: `${$publicPath}services`,
             component: ServicesPage,
         },
         {
-            path: "/blogs",
+            path: `${$publicPath}blogs`,
             component: BlogsPage,
         },
         {
-            path: "/blogs/:id",
+            path: `${$publicPath}blogs/:id`,
             component: BlogPage,
         },
         {
-            path: "/terms-of-service",
+            path: `${$publicPath}terms-of-service`,
             component: TermsOfServicePage,
         },
         {
-            path: "/privacy-policy",
+            path: `${$publicPath}privacy-policy`,
             component: PrivacyPolicyPage,
         },
         {
-            path: "/:pathMatch(.*)*",
+            path: ":pathMatch(.*)*",
             component: NotFoundPage,
         },
     ],

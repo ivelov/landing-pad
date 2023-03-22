@@ -2,7 +2,7 @@
   <article class="w-[342px]">
     <img
       class="w-[193px] h-[193px] mx-auto"
-      :src="`/img/team/${data.image}`"
+      :src="`${$publicPath}img/team/${data.image}`"
       alt=""
     />
     <p class="text-center mt-6 text-dark font-bold text-lg">

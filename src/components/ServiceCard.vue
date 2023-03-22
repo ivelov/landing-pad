@@ -19,7 +19,7 @@
         class="mt-5 first:mt-0"
       >
         <router-link
-          :to="{ path: '/services', query: { service: data.service, category:index }}"
+          :to="{ path: `${$publicPath}services`, query: { service: data.service, category:index }}"
           class="flex justify-between items-center gap-3 text-base leading-[19px]"
         >
           <span class="w-56">{{ category.name }}</span>

@@ -49,11 +49,11 @@
       </div>
 
       <p class="text-black mt-[70px] mb-[21px] text-sm leading-4 text-center">
-        <router-link to="/terms-of-service" class="text-blue-line"
+        <router-link :to="`${$publicPath}terms-of-service`" class="text-blue-line"
           >Terms of Service </router-link
         >
         <span class="font-gilroy font-normal">and</span>
-        <router-link to="/privacy-policy" class="text-blue-line"
+        <router-link :to="`${$publicPath}privacy-policy`" class="text-blue-line"
           > Privacy Policy</router-link
         >.
       </p>
