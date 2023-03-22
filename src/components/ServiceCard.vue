@@ -5,7 +5,7 @@
     <p class="font-medium text-xl">
       <img
         class="inline mr-4 w-[42px] h-[42px]"
-        :src="`/img/services/${data.image}`"
+        :src="`${$publicPath}img/services/${data.image}`"
         alt=""
       />{{ data.name }}
     </p>
