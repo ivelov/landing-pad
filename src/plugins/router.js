@@ -6,6 +6,7 @@ import BlogsPage from "../pages/BlogsPage";
 import BlogPage from "../pages/BlogPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import TermsOfServicePage from "../pages/TermsOfServicePage";
+import PrivacyPolicyPage from "../pages/PrivacyPolicyPage";
 
 
 Vue.use(VueRouter);
@@ -30,6 +31,10 @@ const router = new VueRouter({
         {
             path: "/terms-of-service",
             component: TermsOfServicePage,
+        },
+        {
+            path: "/privacy-policy",
+            component: PrivacyPolicyPage,
         },
         {
             path: "/:pathMatch(.*)*",
