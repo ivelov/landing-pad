@@ -53,7 +53,7 @@
           >Terms of Service </router-link
         >
         <span class="font-gilroy font-normal">and</span>
-        <router-link to="/terms-of-service" class="text-blue-line"
+        <router-link to="/privacy-policy" class="text-blue-line"
           > Privacy Policy</router-link
         >.
       </p>
