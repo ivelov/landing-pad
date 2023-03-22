@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import '../dist/output.css'
+import '../src/output.css'
 import router from './plugins/router'
 
 Vue.config.productionTip = false
