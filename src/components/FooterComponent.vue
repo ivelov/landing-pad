@@ -48,12 +48,14 @@
         </article>
       </div>
 
-      <p
-        class="text-blue-line mt-[70px] mb-[21px] text-smleading-4 text-center"
-      >
-        Terms of Service
-        <span class="text-black font-gilroy font-normal">and</span> Privacy
-        Policy.
+      <p class="text-black mt-[70px] mb-[21px] text-sm leading-4 text-center">
+        <router-link to="/terms-of-service" class="text-blue-line"
+          >Terms of Service </router-link
+        >
+        <span class="font-gilroy font-normal">and</span>
+        <router-link to="/terms-of-service" class="text-blue-line"
+          > Privacy Policy</router-link
+        >.
       </p>
     </div>
 

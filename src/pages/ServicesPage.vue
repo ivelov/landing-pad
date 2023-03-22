@@ -99,12 +99,16 @@
       </section>
 
       <footer
-        class="text-blue-line mt-[70px] mb-[21px] text-smleading-4 text-center relative"
+        class="text-black mt-[70px] mb-[21px] text-sm leading-4 text-center relative"
       >
         <div class="relative z-10">
-          Terms of Service
-          <span class="text-black font-gilroy font-normal">and</span> Privacy
-          Policy.
+          <router-link to="/terms-of-service" class="text-blue-line"
+            >Terms of Service
+          </router-link>
+          <span class="font-gilroy font-normal">and</span>
+          <router-link to="/privacy-policy" class="text-blue-line">
+            Privacy Policy</router-link
+          >.
         </div>
 
         <div
